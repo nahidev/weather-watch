@@ -19,4 +19,4 @@
 - Copiar la carpeta del proyecto dentro del directorio htdocs de XAMPP.
 - Iniciar el servidor Apache desde el panel de control de XAMPP.
 3. Obtener API key: Regístrate en OpenWeatherMap para obtener una API key y reemplaza la clave en el archivo index.php.
-4. Acceder a la aplicación: Abre el navegador web y navega a http://localhost/TiempoWeb/index.php
+4. Acceder a la aplicación: Abre el navegador web y navega a http://localhost/WeatherWatch/index.php
