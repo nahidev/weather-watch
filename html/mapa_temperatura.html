@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="..\assets\css\styles.css">
+    <title>Mapa de Temperatura</title>
+    <link rel="stylesheet" href="https://openlayers.org/en/v6.13.0/css/ol.css" type="text/css">
+    <style>
+        html, body, main {
+            height: 100%;
+            margin: 0; 
+            padding: 0; 
+        }
+        
+        #map {
+            width: 100%;
+            height: calc(100% - 60px); 
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="cabecera">
+        <h1>WeatherWatch</h1>
+        <img src="..\assets\imgs\iconosol.jpg" alt="Icono sol">
+    </div>
+</header>
+<main>
+    <div id="map"></div>
+</main>
+<script src="https://openlayers.org/en/v6.13.0/build/ol.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var map = new ol.Map({
+        target: 'map',
+        // layer: temp_new
+        layers: [
+            new ol.layer.Tile({
+                source: new ol.source.XYZ({
+                    url: 'https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=79b93cc4e8b99878c153a44f0cd86eef'
+                })
+            })
+        ],
+        view: new ol.View({
+            center: ol.proj.fromLonLat([-3.7038, 40.4168]), // Coordenadas de Madrid
+            zoom: 2
+        })
+    });
+</script>
+<footer>
+    <div class="footer">
+        <p>&copy; 2024 nahidev</p>
+    </div>
+</footer>
+</body>
+</html>
